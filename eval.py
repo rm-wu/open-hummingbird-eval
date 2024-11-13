@@ -5,7 +5,7 @@ import random
 import argparse
 import numpy as np
 
-from src.hbird_eval import hbird_evaluation
+from hummingbird_eval.hbird_eval import hbird_evaluation
 
 
 def main(args):
@@ -30,7 +30,7 @@ def main(args):
         # Whether to return additional NNs details
         return_knn_details=False,
         # The number of neighbors to fetch per image patch
-        num_neighbour=30,
+        # num_neighbour=30,
         # Other parameters to be used for the k-NN operator
         nn_params=None,
         # Function that extracts features from a vision encoder on images
@@ -68,11 +68,11 @@ if __name__ == "__main__":
     parser.add_argument("--input-size", type=int, default=224, help="Size of the images fed to the model")
     parser.add_argument("--patch-size", type=int, default=16, help="Size of the model patches")
     parser.add_argument("--memory-size", type=int, default=None, help="The size of the memory bank. Unbounded if not specified")
-    parser.add_argument("--model", type=str, required=True, help="DINO model name")
-    parser.add_argument("--embeddings-size", type=int, required=True, help="The size of the model embeddings")
+    parser.add_argument("--model", type=str, default="dino_vits16", help="DINO model name")
+    parser.add_argument("--embeddings-size", type=int, default=384, help="The size of the model embeddings")
 
     # Data arguments
-    parser.add_argument("--data-dir", type=str, default="VOCSegmentation", help="Path to the VOC dataset")
+    parser.add_argument("--data-dir", type=str, default="/home/mereur1/projects/ocl/open-hummingbird-eval/dataset/", help="Path to the VOC dataset")
 
     args = parser.parse_args()
 

@@ -2,6 +2,7 @@ import os
 import torch
 import pytorch_lightning as pl
 from torch.utils.data import DataLoader, Dataset
+import torch.nn.functional as F
 
 from typing import Optional
 from PIL import Image

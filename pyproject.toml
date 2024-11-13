@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hummingbird_eval"
+version = "0.1.0"
+authors = [
+    { name="Valentinos Pariza", email="vpariza@example.com" },
+]
+description = "Hummingbird Evaluation for vision encoders"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "torch",
+    "torchvision",
+    "numpy",
+    "pillow",
+    "tqdm",
+    "scann",
+    "joblib",
+    "scipy"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/vpariza/open-hummingbird-eval"
+"Bug Tracker" = "https://github.com/vpariza/open-hummingbird-eval/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
